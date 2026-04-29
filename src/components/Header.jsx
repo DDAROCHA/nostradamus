@@ -4,7 +4,7 @@ export default function Header() {
       <h1>🔮 Nostradamus</h1>
       <p>
         Predicciones inteligentes para planificar tu semana usando clima, noticias, economía y
-        eventos locales.
+        eventos locales de Buenos Aires.
       </p>
     </div>
   );
