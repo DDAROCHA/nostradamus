@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import Header from '../components/Header';
 import PromptBox from '../components/PromptBox';
-import Loader from '../components/Loader';
+import LoadingSpinner from '../components/LoadingSpinner';
 import ResultBox from '../components/ResultBox';
+import { ParticlesBackground } from '../components/ParticlesBackground';
 import { getPrediction } from '../services/api';
 
 export default function Home() {
@@ -24,11 +25,14 @@ export default function Home() {
   };
 
   return (
-    <div style={{ maxWidth: 600, margin: 'auto' }}>
-      <Header />
-      <PromptBox onSubmit={handleSubmit} />
-      {loading && <Loader />}
-      {result && <ResultBox result={result} />}
-    </div>
+    <>
+      <ParticlesBackground />
+      <div style={{ maxWidth: 600, margin: 'auto', position: 'relative', zIndex: 1 }}>
+        <Header />
+        <PromptBox onSubmit={handleSubmit} />
+        {loading && <LoadingSpinner />}
+        {result && <ResultBox result={result} />}
+      </div>
+    </>
   );
 }

@@ -1,0 +1,52 @@
+/* --------------------------- */
+/* LOGO */
+/* --------------------------- */
+
+.header-cerebro {
+  /* Se mantiene la altura, pero se ajusta el margen */
+  height: 80px; /* Reducí la altura para un mejor look */
+  margin-right: 15px; /* Espacio después del logo */
+  min-width: 80px; /* Evita que el logo se haga más pequeño */
+}
+
+/* Ajuste al botón de Info para que no use estilos de 'clear-btn' si no queremos */
+.info-btn {
+  /* Asegura que el botón de info no se estire */
+  align-self: flex-start;
+  /* Asegura que tenga el color correcto */
+  background: transparent;
+  border: none;
+  color: #c7d2fe;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex; /* Para alinear el ícono y el texto */
+  align-items: center;
+  margin-top: -30px; /* Mueve el botón de info más cerca del borde superior si es necesario */
+}
+.info-btn:hover {
+  background: transparent;
+  color: #a5b4fc;
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+  }
+
+  50% {
+    transform: scale(1.35);
+    box-shadow: 0 0 40px rgba(34, 197, 94, 1);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+  }
+}
+
+.animate-breathe {
+  animation: breathe 2.8s ease-in-out infinite;
+}
