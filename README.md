@@ -1,70 +1,110 @@
-# Getting Started with Create React App
+# 🔮 Nostradamus AI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicación inteligente de predicción que utiliza múltiples APIs en tiempo real y modelos de inteligencia artificial para generar recomendaciones sobre planificación de eventos, decisiones comerciales y análisis contextual.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Demo
 
-### `npm start`
+👉 https://nostradamus-ia.netlify.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧠 Descripción
 
-### `npm test`
+**Nostradamus AI** es un sistema que combina datos externos + IA para generar respuestas inteligentes basadas en contexto real.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+El sistema analiza:
 
-### `npm run build`
+- 🌦️ Clima en tiempo real
+- 📅 Calendario de feriados (Argentina)
+- 💰 Datos económicos (IPC / canasta)
+- 📰 Noticias locales
+- 🤖 Inteligencia Artificial (OpenAI / Gemini)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ⚙️ Cómo funciona
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. El usuario ingresa un prompt (ej: plan, evento o idea)
+2. El backend consulta múltiples APIs:
+   - Calendario de feriados
+   - Clima
+   - Economía
+   - Noticias
+3. Se consolida toda la información
+4. Un modelo de IA genera una respuesta final contextualizada
+5. Se devuelve una predicción inteligente
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🔌 APIs utilizadas
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 📅 Calendario
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- https://api.argentinadatos.com/v1/feriados/{year}
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 💰 Economía
 
-## Learn More
+- https://api.argly.com.ar/api/ipc
+- https://api.argly.com.ar/api/canasta
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 📰 Noticias
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- https://gnews.io/api/v4/search
 
-### Code Splitting
+### 🌦️ Clima
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- https://www.meteosource.com/api/v1/free/point
 
-### Analyzing the Bundle Size
+### 🤖 Inteligencia Artificial
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- OpenAI API
+- Google Gemini API (configurable)
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🛠️ Stack tecnológico
 
-### Advanced Configuration
+### Frontend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- React
+- Framer Motion
+- Tailwind CSS
+- tsParticles (background animado)
+- Axios
 
-### Deployment
+### Backend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Node.js
+- Express
+- PostgreSQL (Neon)
+- OpenAI / Gemini SDK
+- Axios
+- dotenv
+- cors
+- express-rate-limit
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🗄️ Base de datos
+
+Se registra cada request en PostgreSQL:
+
+- prompt del usuario
+- respuesta de IA
+- provider utilizado
+- tiempo de respuesta
+- APIs utilizadas
+
+---
+
+## 📊 Ejemplo de uso
+
+```txt
+Prompt:
+"Quiero organizar un evento al aire libre la semana que viene en Buenos Aires"
+
+Respuesta:
+La IA analiza clima, feriados, economía y noticias para sugerir condiciones óptimas y riesgos.
+```
